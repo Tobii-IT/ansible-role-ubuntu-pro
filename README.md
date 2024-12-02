@@ -56,3 +56,4 @@ MIT / BSD
 ## Author Information
 
 This role was created in October 2022 by [Sebastien Thebert](https://github.com/sebthebert).
+Updated by Christian Erb in December 2024

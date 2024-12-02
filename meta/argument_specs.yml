@@ -6,33 +6,51 @@ argument_specs:
       - The main entry point just combines the repositories and packages
              entry points.
     options:
-      debug:
+      ubuntu_pro_debug:
         description: Use debug module to display 'pro' command stdout/stderr
         type: bool
         default: false
-      disabled_services:
+      ubuntu_pro_disabled_services:
         description: List of services to disable
         type: list
         elements: str
         choices:
+          - 'anbox-cloud'  # Scalable Android in the cloud
           - 'cc-eal'       # Common Criteria EAL2
+          - 'esm-apps'     # Expanded Security Maintenance for Applications
           - 'esm-infra'    # Expanded Security Maintenance for Infrastructure
-          - 'fips'
-          - 'fips-updates'
+          - 'fips'         # NIST-certified FIPS crypto packages
+          - 'fips-preview' # Preview of FIPS crypto packages undergoing certification with NIST
+          - 'fips-updates' # FIPS compliant crypto packages with stable security updates
+          - 'landscape'    # Management and administration tool for Ubuntu
           - 'livepatch'    # Canonical Kernel Livepatch
-          - 'usg'
-      enabled_services:
+          - 'realtime-kernel'  # Ubuntu kernel with PREEMPT_RT patches integrated
+          - 'realtime-kernel.generic'  # Generic version of the RT kernel (default)
+          - 'realtime-kernel.intel-iotg'  # RT kernel optimized for Intel IOTG platform
+          - 'ros'          # Security Updates for the Robot Operating System
+          - 'ros-updates'  # All Updates for the Robot Operating System
+          - 'usg'          # Security compliance and audit tools
+      ubuntu_pro_enabled_services:
         description: List of services to enable
         type: list
         elements: str
         choices:
+          - 'anbox-cloud'  # Scalable Android in the cloud
           - 'cc-eal'       # Common Criteria EAL2
+          - 'esm-apps'     # Expanded Security Maintenance for Applications
           - 'esm-infra'    # Expanded Security Maintenance for Infrastructure
-          - 'fips'
-          - 'fips-updates'
+          - 'fips'         # NIST-certified FIPS crypto packages
+          - 'fips-preview' # Preview of FIPS crypto packages undergoing certification with NIST
+          - 'fips-updates' # FIPS compliant crypto packages with stable security updates
+          - 'landscape'    # Management and administration tool for Ubuntu
           - 'livepatch'    # Canonical Kernel Livepatch
-          - 'usg'
-      state:
+          - 'realtime-kernel'  # Ubuntu kernel with PREEMPT_RT patches integrated
+          - 'realtime-kernel.generic'  # Generic version of the RT kernel (default)
+          - 'realtime-kernel.intel-iotg'  # RT kernel optimized for Intel IOTG platform
+          - 'ros'          # Security Updates for the Robot Operating System
+          - 'ros-updates'  # All Updates for the Robot Operating System
+          - 'usg'          # Security compliance and audit tools
+      ubuntu_pro_state:
         description: State of Ubuntu Pro installation
         type: str
         choices:
